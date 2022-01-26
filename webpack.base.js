@@ -1,6 +1,6 @@
 var config = require('./config');
 var webpack = require('webpack');
-const CompressionPlugin = require('compression-webpack-plugin');
+var CompressionPlugin = require('compression-webpack-plugin');
 
 module.exports = {
   module: {
@@ -62,11 +62,14 @@ module.exports = {
     new webpack.ContextReplacementPlugin(/moment[/\\]locale$/, /en|it/),
     new webpack.optimize.AggressiveMergingPlugin(),
     new CompressionPlugin({
-      filename: '[path][base].gz',
       algorithm: 'gzip',
       test: /\.js$|\.css$|\.html$/,
       threshold: 10240,
       minRatio: 0.8,
     }),
   ],
+  devServer: {
+    historyApiFallback: true,
+  },
+  stats: 'errors-only'
 };

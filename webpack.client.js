@@ -1,16 +1,17 @@
 const path = require('path');
 const { merge } = require('webpack-merge');
 const baseConfig = require('./webpack.base.js');
+const configAssets = require('./config');
 
 const config = {
-  mode: 'production',
-  entry: './src/Client/Main.js',
+  mode: 'development',
+  entry: './src/MainFile/Main.js',
   performance: {
     hints: false,
   },
   output: {
     filename: 'dist.js',
-    path: path.resolve(__dirname, 'public/rblbankoffers'),
+    path: path.resolve(__dirname, `public${configAssets.PrefixPath}`),
   },
 };
 
