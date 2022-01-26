@@ -27,7 +27,7 @@ export default (req, store, context) => {
         <meta data-react-helmet="true" name="robots" content="INDEX, FOLLOW" />
         <meta data-react-helmet="true" name="googlebot" content="INDEX, FOLLOW">
 
-        <link rel="stylesheet" type="text/css" href="${renderUrl}css/error404.css">
+        <link rel="stylesheet" type="text/css" href="${renderUrl}css/notfound.css">
 
 		  </head>
     <body>
